@@ -1,0 +1,12 @@
+kind: Route
+apiVersion: v1
+metadata:
+  name: country-service-info
+  namespace: country-integration
+spec:
+  to:
+    kind: Service
+    name: country-info-service
+    weight: 100
+  port:
+    targetPort: 8080-tcp

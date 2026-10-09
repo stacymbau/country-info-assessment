@@ -1,0 +1,21 @@
+﻿spring:
+  application:
+    name: country-info-service
+  config:
+    activate:
+      on-profile: k8s
+
+  lifecycle:
+    timeout-per-shutdown-phase: 25s
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/countrydb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:countryapp}
+    password: ${DB_PASSWORD:countrypass}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:10}
+      connection-timeout: 5000
+
+logging:
+  structured:
+    format:
+      console: ecs
