@@ -5,8 +5,6 @@
 spring:
   application:
     name: country-info-service
-  profiles:
-    active: ${SPRING_ACTIVE_PROFILE}
   lifecycle:
     timeout-per-shutdown-phase: 25s
   datasource:
